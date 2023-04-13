@@ -27,7 +27,14 @@
       <p>This is a meeting minute for CS221 Class 2. </p>
       </hr>
 
+      <ul>
+        <li>Unfinished business from last meeting</li>
+        <li>Agenda of what the meeting will cover</li>
+        <li>New material coverd</li>
+      </ul>
+
     </header>
+
     <section>
       <h3>Unfinished business from last meeting</h3>
       <p>From Last class: Overview of Artificial Intelligence<br>
@@ -82,14 +89,57 @@
         <source src="https://youtu.be/zrT2qETJilw" type="audio/ogg">
       </audio>
 
-      <ul>
-        <li>Unfinished business from last meeting</li>
-        <li>Agenda of what the meeting will cover</li>
-        <li>New material coverd</li>
-      </ul>
 
 
-      
+      <form>
+        <textarea id="end" name="end" rows="1" cols="20">What is the answer of the question above?</textarea>
+        <br>
+        <fieldset>
+          <label for="answer">Answer:</label>
+          <input type="text" id="answer" name="answer"><br>
+          <input type="date" value="2023-04-12" /><br>
+          <br>
+
+          <div>
+            <input type="checkbox" id="Yes" name="Yes" checked>
+            <label for="Yes">Yes</label>
+          </div>
+          <br>
+
+          <div>
+            <input type="checkbox" id="No" name="No">
+            <label for="No">No</label>
+          </div>          
+          <br>
+
+          <div>
+            <input type="radio" id="I don't know" name="I don't know" value="I don't know">
+            <label for="I don't know">I don't know</label>
+          </div>
+          <br>
+
+          <datalist id="contents">
+            <option value="Types of prediction tasks">
+            <option value="Loss minimization framework">
+            <option value="Question">
+          </datalist>
+          <br>
+
+          <label for="contents">What is the most interesting part?:</label>
+          <br>
+
+          <select id="ontents">
+            <option value="Types of prediction tasks">Types of prediction tasks</option>
+            <option value="Loss minimization framework">Loss minimization framework</option>
+            <option value="Loss minimization framework">Loss minimization framework</option>
+          </select>
+          <br>
+
+          <button type="button">Good Luck</button>
+
+        </fieldset>
+      </form>
+
     </footer>
   </body>
 </html>
