@@ -1,3 +1,3 @@
 # Lab 2 - Starter
-
-Test1
+Published site:
+https://fuyaozhao1018.github.io/Lab2_Starter/
