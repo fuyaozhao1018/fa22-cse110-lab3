@@ -49,6 +49,9 @@
         text-align: center;
 
       }
+      h3 ~ details{
+        color: rgb(197, 21, 144);
+      }
       h4 {
         text-align: center;
         font-size: 16pt;
@@ -62,7 +65,7 @@
         border-radius: 5px;
         color: rgb(13, 228, 145);
       }
-      h5{ display: none;}
+      h5,h6 { display: none;}
       p {
         font-family: Times;
         padding: 30px;
@@ -70,6 +73,17 @@
         line-height: 2em;
 
       }
+      section > p{
+        text-align: center;
+      }
+      p + i{
+        color: rgb(42, 17, 82);
+
+      }
+      p.smaller {
+        font-size: 90%;;
+      }
+
       a[href*="." s] {
         color: #ff0000;
       }
@@ -80,15 +94,14 @@
         float: none;
         width: auto;}
 
-      #wordAgenda {
+      #wordAgenda,#listbox {
         display: block;
         float: none;
         width: auto;
-      }
-      #listbox {
         margin: 0;
         padding: 0;
       }
+
       .flex-container {
         display: flex;
         background-color: #f1f1f1;
@@ -96,7 +109,7 @@
 
       .flex-container > div {
         font-family: "Sofia", sans-serif;
-        font-size: 1ch;
+        font-size: 3ch;
         background-color: rgb(114, 18, 58);
         color: rgb(238, 198, 198);
         width: 120px;
@@ -128,16 +141,18 @@
   
   <body>
     <header>
-      <h5> Not meant to display </h5>
+      <h5> Not meant to display </h5> /* just to fullfillthe display none reqmt */
+      <h6> Not meant to display </h6> /* just to fullfillthe display none reqmt */
+
       <h1>Machine Learning 1 - Linear Classifiers, SGD </h1>
       <h2>Stanford CS221: Learn AI</h2>
       <hr>      
       <h4>Attendance list</h4>>
-      <p><i>Instructor: Percy Liang, Dorsa Sadigh</i> </p>
-      <p><i>Students</i></p>
+      <p class="smaller"><i>Instructor: Percy Liang, Dorsa Sadigh</i> </p>
+      <p class="smaller"><i>Students</i></p>
    
       <h4>Date/ Semester</h4>>
-      <p><em>Autumn 2019</em></p>
+      <p class="smaller"><em>Autumn 2019</em></p>
       <hr>      
 
       <p class="font-effect-shadow-multiple">This is a meeting minute for CS221 Class 2. </p>
