@@ -19,12 +19,14 @@
       }
       
       h1 {
-        position: fixed;
+        position: absolute;
         color: rgb(228, 10, 137);
         text-align: center;
 
       }
       h2 {
+        position: fixed;
+
         position: absolute;
         color: greenyellow;
         text-align: center;
@@ -73,12 +75,11 @@
         position: static;
         max-width: 600px;
         min-width: 600px;
-        margin: 25px 50px 75px 100px;
         padding: 25px 50px 75px;
         box-sizing: border-box;
       }
       @media screen and (min-width: 480px) {
-        #wordAgenda {width: 200px; float: left;}
+        #wordAgenda { float:left;}
         #picAgenda {margin-left: 216px;}
       }
       div.bluebox {
