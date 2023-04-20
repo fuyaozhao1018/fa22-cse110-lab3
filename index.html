@@ -68,8 +68,8 @@
       h5,h6 { display: none;}
       p {
         font-family: Times;
-        padding: 30px;
-        font-size: 20px;
+        padding: 20px;
+        font-size: 30px;
         line-height: 2em;
 
       }
@@ -81,14 +81,18 @@
 
       }
       p.smaller {
+        text-decoration: none;
         font-size: 90%;;
       }
 
       a[href*="." s] {
+        text-decoration-line: underline;
+        text-decoration-style: solid;
         color: #ff0000;
       }
 
-      #picAgenda {   
+      #picAgenda {
+        margin: 15px;   
         position: relative;   
         left: 1cm;
         float: none;
@@ -109,18 +113,18 @@
 
       .flex-container > div {
         font-family: "Sofia", sans-serif;
-        font-size: 3ch;
+        font-size: 22ch;
         background-color: rgb(114, 18, 58);
         color: rgb(238, 198, 198);
         width: 120px;
         margin: 15px;
         text-align: center;
-        line-height: 60px;
+        line-height: 80px;
       }
       .listbox {
         display: grid;
         padding: 8px;
-        margin-bottom: 7px;
+        margin-bottom: 20px;
         background-color: #33b5e5;
         color: #ffffff;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -130,11 +134,17 @@
         #picAgenda {margin-left: 3cm;}
       }
       div.bluebox {
+        margin: 15px;
         font-size: 120%;
         width: 300px;
-        padding: 25px 50px 75px;
+        padding: 30px 50px 75px;
         box-sizing: border-box;
         background-color: lightblue;
+      }
+
+      div.hlkt{
+        margin-left: 30cm;
+        position: absolute;
       }
       </style>
   </head>
@@ -143,6 +153,9 @@
     <header>
       <h5> Not meant to display </h5> /* just to fullfillthe display none reqmt */
       <h6> Not meant to display </h6> /* just to fullfillthe display none reqmt */
+      <div id=" hlkt">
+        <img src="hellokt.jpg" alt="hellokt" width="300" height="300">
+      </div>
 
       <h1>Machine Learning 1 - Linear Classifiers, SGD </h1>
       <h2>Stanford CS221: Learn AI</h2>
