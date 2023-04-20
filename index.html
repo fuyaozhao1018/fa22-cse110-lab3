@@ -8,34 +8,53 @@
     <meta name="description" content="Machine Learning 1 - Linear Classifiers, SGD | Stanford CS221: Learn AI (Autumn 2019)">
     <meta name="keywords" content=" Artificial Intelligence,Stanford,CS221,Learn AI">
     <link rel="Source" href="https://www.youtube.com/watch?v=zrT2qETJilw&list=PLoROMvodv4rO1NB9TD4iUZ3qghGEGtqNX&index=2">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
 
     <style>
+      li {
+        display: inline-block;
+      }
+
+      a:hover {
+        color: #FF00FF;
+        display: inline;
+      }
+      a:active {
+        color: #c53043;
+      }
       * {
         font-family: Times;
+        box-sizing: border-box;
+
       }   
       body {
         background-color: rgb(253, 208, 251);
       }
       
       h1 {
+        position: static;
         color: rgb(228, 10, 137);
         text-align: center;
 
       }
       h2 {
-        color: rgb(25, 149, 250);
+        color: red;
         text-align: center;
 
       }
       h3 {
+        font-size: 30px;
+
         color: rgb(25, 250, 250);
         text-align: center;
 
       }
+      h3 ~ details{
+        color: rgb(197, 21, 144);
+      }
       h4 {
         text-align: center;
-        font-size: 30px;
+        font-size: 16pt;
         padding-top: 50px;
         padding-right: 30px;
         padding-bottom: 50px;
@@ -46,58 +65,117 @@
         border-radius: 5px;
         color: rgb(13, 228, 145);
       }
+
+      /* h5 and h6 are not for display */
+      h5,h6 { display: none;}
+
       p {
         font-family: Times;
-        padding: 30px;
-        font-size: 20px;
+        padding: 20px;
+        font-size: 30px;
+        line-height: 2em;
+
       }
+      section > p{
+        text-align: center;
+      }
+      p + i{
+        color: rgb(42, 17, 82);
+
+      }
+      p.smaller {
+        text-decoration: none;
+        font-size: 90%;;
+      }
+
       a[href*="." s] {
-        color: rgb(46, 127, 233);
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        color: #ff0000;
       }
 
-      #picAgenda {margin-left: 4px;}
+      #picAgenda {
+        margin: 15px;   
+        position: relative;   
+        left: 1cm;
+        float: none;
+        width: auto;}
 
-      #wordAgenda {
+      #wordAgenda,#listbox {
+        display: block;
         float: none;
         width: auto;
-      }
-      #listbox {
         margin: 0;
         padding: 0;
       }
+
+      .flex-container {
+        display: flex;
+        background-color: #f1f1f1;
+      }
+
+      .flex-container > div {
+        font-family: "Sofia", sans-serif;
+        font-size: 10ch;
+        background-color: rgb(114, 18, 58);
+        color: rgb(238, 198, 198);
+        width: 400px;
+        margin: 20px;
+        text-align: center;
+        line-height:130px;
+      }
       .listbox {
-        margin: 4px;
-        padding: 2px;
+        display: grid;
+        padding: 8px;
+        margin-bottom: 20px;
+        background-color: #33b5e5;
+        color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
       }
       @media screen and (min-width: 480px) {
-        #wordAgenda {width: 200px; float: left;}
-        #picAgenda {margin-left: 216px;}
+        #wordAgenda { float:left;}
+        #picAgenda {margin-left: 3cm;}
       }
       div.bluebox {
+        margin: 15px;
+        font-size: 120%;
         width: 300px;
-        margin: 25px 50px 75px 100px;
-        padding: 25px 50px 75px;
+        padding: 30px 50px 75px;
         box-sizing: border-box;
         background-color: lightblue;
+      }
+
+      div.hlkt{
+        margin-left: 30cm;
+        position: absolute;
       }
       </style>
   </head>
   
   <body>
-    <header>
 
-      <h1>Machine Learning 1 - Linear Classifiers, SGD </h1>
-      <h2>Stanford CS221: Learn AI</h2>
-      <hr>      
+    <header>
+      <h5> Not meant to display </h5> 
+      <h6> Not meant to display </h6> 
+      <div id=" hlkt">
+        <img src="hellokt.jpg" alt="hellokt" width="300" height="300">
+      </div>
+
+      <section>
+        <h1>Machine Learning 1 - Linear Classifiers, SGD </h1>
+        <h2>Stanford CS221: Learn AI</h2>
+        <hr>      
+      </section>
+    
       <h4>Attendance list</h4>>
-      <p><i>Instructor: Percy Liang, Dorsa Sadigh</i> </p>
-      <p><i>Students</i></p>
+      <p class="smaller"><i>Instructor: Percy Liang, Dorsa Sadigh</i> </p>
+      <p class="smaller"><i>Students</i></p>
    
       <h4>Date/ Semester</h4>>
-      <p><em>Autumn 2019</em></p>
+      <p class="smaller"><em>Autumn 2019</em></p>
       <hr>      
 
-      <p>This is a meeting minute for CS221 Class 2. </p>
+      <p class="font-effect-shadow-multiple">This is a meeting minute for CS221 Class 2. </p>
 
       <ul id="listbox">
         <li class="listbox">Unfinished business from last meeting</li>
@@ -114,16 +192,18 @@
         </div>
 
     <div id="picAgenda">
-      <img src="function.png" alt="function: recurse" width="400" height="210">
+
+      <img src="function.png" alt="function: recurse" width="800" height="410">
     </div>
 
     <section>
       <h3>Agenda of what the meeting will cover</h3>
-      <img src="agenda.png" alt="agenda" width="400" height="195">
+      <img src="agenda.png" alt="agenda" width="800" height="295">
     </section>
 
     <main>
       <h3>New material coverd</h3>
+
       <h4>Types of prediction tasks</h4>>
       <ol>
         <li>Multiclass classification: y is a <b>category</b></li>
@@ -132,21 +212,21 @@
       </ol>
 
       <h4>Loss minimization framework</h4>>
-      <div> Loss(x,y,w) => Trainloss(w) </div>
+      <div class="font-effect-shadow-multiple"> Loss(x,y,w) => Trainloss(w) </div>
       <br>
 
-      <img src="Lossmin.png" alt="Loss" width="400" height="260">
+      <img src="Lossmin.png" alt="Loss" width="800" height="520">
       <h4>Zero-one Loss</h4>>
-      <span>SGD not applicable</span> <br>
+      <span class="font-effect-outline">SGD not applicable</span> <br>
 
-      <img src="Zero-OneLoss.png" alt="Zero-one Loss" width="400" height="295">
+      <img src="Zero-OneLoss.png" alt="Zero-one Loss" width="600" height="395">
       <h3>Question</h3>
       <details>
         <summary>What would the step size be? </summary>
         <p>Strategies: Constant: step size = 0.1.</p>
         <p>Decreasing: step size = 1/the square root of updates made so far</p>
       </details>
-      <img src="Question.png" alt="Question" width="400" height="140">
+      <img src="Question.png" alt="Question" width="800" height="200">
 
     </main>
 
@@ -209,6 +289,12 @@
       <br>
       <br>
       <hr>      
+      <div class="flex-container">
+        <div class="font-effect-neon">Thanks</div>
+        <div class="font-effect-neon">for</div>
+        <div class="font-effect-neon">watchihg</div> 
+      </div>
+
 
       <p>Author: Fuyao Zhao</p>
       <nav>
@@ -216,7 +302,7 @@
       </nav>
       <br>
 
-      <video width="400" height="320" controls>
+      <video width="800" height="620" controls>
         <source src="video1841692436.mp4" type="video/mp4">
       </video>
       <br>
