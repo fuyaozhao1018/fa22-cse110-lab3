@@ -11,6 +11,12 @@
 
 
     <style>
+      a:hover {
+        color: #FF00FF;
+      }
+      a:active {
+        color: #c53043;
+      }
       * {
         font-family: Times;
       }   
@@ -19,7 +25,6 @@
       }
       
       h1 {
-        position: absolute;
         color: rgb(228, 10, 137);
         text-align: center;
 
@@ -59,7 +64,8 @@
         color: #ff0000;
       }
 
-      #picAgenda {        
+      #picAgenda {      
+        position: relative;  
         float: none;
         width: auto;}
 
@@ -84,6 +90,7 @@
       }
       div.bluebox {
         position: relative;
+        left: 5cm;
         width: 300px;
         margin: 25px 50px 75px 100px;
         padding: 25px 50px 75px;
@@ -124,6 +131,8 @@
         </div>
 
     <div id="picAgenda">
+      <img src="hellokt.jpg" alt="hellokt" width="300" height="300">
+
       <img src="function.png" alt="function: recurse" width="800" height="410">
     </div>
 
