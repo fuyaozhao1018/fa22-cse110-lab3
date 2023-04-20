@@ -67,6 +67,8 @@
         font-family: Times;
         padding: 30px;
         font-size: 20px;
+        line-height: 2em;
+
       }
       a[href*="." s] {
         color: #ff0000;
@@ -74,6 +76,7 @@
 
       #picAgenda {   
         position: relative;   
+        left: 3cm;
         float: none;
         width: auto;}
 
@@ -86,7 +89,22 @@
         margin: 0;
         padding: 0;
       }
+      .flex-container {
+        display: flex;
+        background-color: #f1f1f1;
+      }
+
+      .flex-container > div {
+        background-color: rgb(114, 18, 58);
+        color: rgb(238, 198, 198);
+        width: 120px;
+        margin: 15px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 28px;
+      }
       .listbox {
+        display: grid;
         padding: 8px;
         margin-bottom: 7px;
         background-color: #33b5e5;
@@ -98,9 +116,7 @@
         #picAgenda {margin-left: 3cm;}
       }
       div.bluebox {
-        left: 5cm;
         width: 300px;
-        margin: 25px 50px 75px 100px;
         padding: 25px 50px 75px;
         box-sizing: border-box;
         background-color: lightblue;
@@ -236,6 +252,12 @@
       <br>
       <br>
       <hr>      
+      <div class="flex-container">
+        <div>Thanks</div>
+        <div>for</div>
+        <div>watchihg</div> 
+      </div>
+
 
       <p>Author: Fuyao Zhao</p>
       <nav>
