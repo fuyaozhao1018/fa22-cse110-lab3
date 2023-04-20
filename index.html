@@ -11,6 +11,9 @@
 
 
     <style>
+      * {
+        font-family: Times;
+      }   
       body {
         background-color: rgb(253, 208, 251);
       }
@@ -18,22 +21,64 @@
       h1 {
         color: rgb(228, 10, 137);
         text-align: center;
+
       }
       h2 {
         color: rgb(25, 149, 250);
         text-align: center;
+
       }
       h3 {
         color: rgb(25, 250, 250);
         text-align: center;
+
       }
       h4 {
-        color: rgb(13, 228, 145);
         text-align: center;
+        font-size: 30px;
+        padding-top: 50px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+        border-width: medium;
+        border-style: solid;
+        border-color: rgb(231, 77, 141);
+        border-radius: 5px;
+        color: rgb(13, 228, 145);
       }
       p {
-        font-family: verdana;
+        font-family: Times;
+        padding: 30px;
         font-size: 20px;
+      }
+      a[href*="." s] {
+        color: rgb(46, 127, 233);
+      }
+
+      #picAgenda {margin-left: 4px;}
+
+      #wordAgenda {
+        float: none;
+        width: auto;
+      }
+      #listbox {
+        margin: 0;
+        padding: 0;
+      }
+      .listbox {
+        margin: 4px;
+        padding: 2px;
+      }
+      @media screen and (min-width: 480px) {
+        #wordAgenda {width: 200px; float: left;}
+        #picAgenda {margin-left: 216px;}
+      }
+      div.bluebox {
+        width: 300px;
+        margin: 25px 50px 75px 100px;
+        padding: 25px 50px 75px;
+        box-sizing: border-box;
+        background-color: lightblue;
       }
       </style>
   </head>
@@ -54,20 +99,23 @@
 
       <p>This is a meeting minute for CS221 Class 2. </p>
 
-      <ul>
-        <li>Unfinished business from last meeting</li>
-        <li>Agenda of what the meeting will cover</li>
-        <li>New material coverd</li>
+      <ul id="listbox">
+        <li class="listbox">Unfinished business from last meeting</li>
+        <li class="listbox">Agenda of what the meeting will cover</li>
+        <li class="listbox">New material coverd</li>
       </ul>
 
     </header>
 
-    <section>
-      <h3>Unfinished business from last meeting</h3>
-      <p>From Last class: Overview of Artificial Intelligence<br>
-        We talked about the function recruse and started Gradient descent.</p>
+    <div id="wordAgenda">
+        <h3>Unfinished business from last meeting</h3>
+      <div class="bluebox">From Last class: Overview of Artificial Intelligence<br>
+        We talked about the function recruse and started Gradient descent.</div>
+        </div>
+
+    <div id="picAgenda">
       <img src="function.png" alt="function: recurse" width="400" height="210">
-    </section>
+    </div>
 
     <section>
       <h3>Agenda of what the meeting will cover</h3>
