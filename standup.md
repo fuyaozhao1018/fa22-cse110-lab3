@@ -1,6 +1,6 @@
 ## Standup Note
 
-*This is a standup note for class 2 of Machine Learning 1 - Linear Classifiers, SGD *
+*This is a standup note for class 2 of Machine Learning 1 - Linear Classifiers, SGD.*
 
 ```
 Percy Liang
@@ -27,7 +27,7 @@ This is my a link to the class meeting video: [Video link](https://www.youtube.c
 - [ ] Tuesday
 - [ ] Wednesday
 
-[link to top](#Standup Note)
+[link to top](#standup-note)
 
 
 
